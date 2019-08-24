@@ -38,7 +38,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
 
     private lateinit var recyclerAdapter: RecyclerAdapter
-    private lateinit var gridLayoutManager: androidx.recyclerview.widget.GridLayoutManager
+    private lateinit var gridLayoutManager: GridLayoutManager
     private val animals : ArrayList<Int> by lazy { Animals.getAnimals() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -54,7 +54,7 @@ class MainActivity : AppCompatActivity() {
     private fun setup() {
 
         recyclerAdapter = RecyclerAdapter(animals, this)
-        gridLayoutManager = androidx.recyclerview.widget.GridLayoutManager(this, 2)
+        gridLayoutManager = GridLayoutManager(this, 2)
 
         recyclerView.layoutManager = gridLayoutManager
         recyclerView.adapter = recyclerAdapter
